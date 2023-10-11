@@ -71,12 +71,13 @@ def create_ann(image_path):
     labels = []
 
     if filename in data:
-        for tag_value, bbox in data[filename]:
-            xmin, ymin, xmax, ymax = bbox
-            rectangle = sly.Rectangle(int(ymin), int(xmin), int(ymax), int(xmax))
+        for tag_value, bboxes_list in data[filename].items():
             tag = sly.Tag(tm_character, tag_value)
-            label = sly.Label(rectangle, class_character, tags=[tag])
-            labels.append(label)
+            for bbox in bboxes_list:
+                xmin, ymin, xmax, ymax = bbox
+                rectangle = sly.Rectangle(int(ymin), int(xmin), int(ymax), int(xmax))
+                label = sly.Label(rectangle, class_character, tags=[tag])
+                labels.append(label)
 
     return sly.Annotation(img_size=(height, width), labels=labels)
 
@@ -98,7 +99,7 @@ def convert_and_upload_supervisely_project(
     api: sly.Api, workspace_id: int, project_name: str
 ) -> sly.ProjectInfo:
     project = api.project.create(workspace_id, project_name)
-    meta = sly.ProjectMeta(obj_classes=list(class_character), tag_metas=[tm_character])
+    meta = sly.ProjectMeta(obj_classes=[class_character], tag_metas=[tm_character])
     api.project.update_meta(project.id, meta.to_json())
 
     dataset_path = "/mnt/c/users/german/documents/CDD"

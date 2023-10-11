@@ -5,7 +5,7 @@ from src.settings import ANNOTATION_TYPES
 # ! Set up values if you want to change default values of visualizations
 ###############################################################################
 
-SAMPLE_RATE = 1  # make less if dataset is too big
+SAMPLE_RATE = 0.25 # make less if dataset is too big
 
 # * Preview class to visualize in SUMMARY.md overview section
 # * Literal["ClassesPreview", "HorizontalGrid", "SideAnnotationsGrid", "Poster", "HorizontalGridAnimated", "VerticalGridAnimated"]
