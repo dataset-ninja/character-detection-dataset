@@ -37,7 +37,7 @@ HOMEPAGE_URL: str = "https://www.kaggle.com/datasets/lorencjan/characters-detect
 PREVIEW_IMAGE_ID: int = 7042985
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
-GITHUB_URL: str = "https://github.com/dataset-ninja/character-detection-dataset/tree/main"
+GITHUB_URL: str = "https://github.com/dataset-ninja/character-detection-dataset"
 # URL to GitHub repo on dataset ninja (e.g. "https://github.com/dataset-ninja/some-dataset")
 
 ##################################
