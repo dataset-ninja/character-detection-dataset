@@ -56,7 +56,7 @@ BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
 REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = None
 
 CITATION_URL: Optional[str] = None
-AUTHORS: Optional[List[str]] = "Jan Lorenc"
+AUTHORS: Optional[List[str]] = ["Jan Lorenc"]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = None
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
